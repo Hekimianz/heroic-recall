@@ -1,0 +1,45 @@
+#instruction--h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 5px;
+  user-select: none;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+#instructions--main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.instruction--title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.instruction--text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 2px;
+  text-align: center;
+}
+
+#instructions--main span {
+  align-self: center;
+  border: 1px solid var(--charcoal);
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--charcoal);
+  transition: 0.2s all;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+#instructions--main span:hover {
+  transform: scale(1.1);
+  color: var(--gold);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+}

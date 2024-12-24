@@ -48,13 +48,14 @@
 #reset--cont {
   position: absolute;
   padding: 15px 25px;
-  background-color: red;
-  color: #000000;
+  background-color: #262626;
+  color: var(--white);
+  border: 1px solid #515050ec;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   border-radius: 4px;
   font-size: 1.5rem;
   font-weight: 400;
@@ -63,7 +64,7 @@
 
 #reset--cont div {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 #reset--cont p {
@@ -73,10 +74,17 @@
 #reset--cont span {
   cursor: pointer;
   transition: 0.2s all;
+  padding: 2.5px 10px;
+  border: 1px solid #515050ec;
+  border-radius: 2px;
 }
 
 #reset--cont span:hover {
   transform: scale(1.1);
-  text-decoration: underline;
+  background-color: #00000013;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.24);
+}
+
+#reset--cont span:first-of-type:hover {
+  color: #ff7681;
 }
