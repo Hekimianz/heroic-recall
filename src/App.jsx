@@ -3,7 +3,9 @@ import Menu from "./components/Menu";
 import Level from "./components/Level";
 function App() {
   const [level, setLevel] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(
+    +localStorage.getItem("highScore") || 0
+  );
   return (
     <>
       {level === 0 ? (
