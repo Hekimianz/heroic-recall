@@ -1,0 +1,37 @@
+#menu--cont {
+  display: flex;
+  flex-direction: column;
+}
+
+#logo {
+  width: 70px;
+}
+
+#title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 10px;
+}
+
+#menu--cont {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+#menu--cont li {
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+#menu--cont li:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+  text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
