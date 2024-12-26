@@ -1,4 +1,10 @@
-function TransitionLevel({ level, setLevel, setTransition }) {
+function TransitionLevel({
+  level,
+  setLevel,
+  setTransition,
+  selectSound,
+  mute,
+}) {
   return (
     <section id="transitionLevel--cont">
       <p>{`Level ${level} completed!`}</p>
@@ -7,6 +13,9 @@ function TransitionLevel({ level, setLevel, setTransition }) {
         onClick={() => {
           setLevel((prev) => prev + 1);
           setTransition(false);
+          if (!mute) {
+            selectSound.play();
+          }
         }}
       >
         Next Level

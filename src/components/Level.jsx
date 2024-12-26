@@ -9,6 +9,10 @@ function Level({
   setGameOver,
   setGameStarted,
   setTransition,
+  mute,
+  selectSound,
+  winSound,
+  loseSound,
 }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -66,6 +70,9 @@ function Level({
     if (clicked.includes(id)) {
       setGameOver(true);
       setGameStarted(false);
+      if (!mute) {
+        loseSound.play();
+      }
       return;
     }
     if (clicked.length + 1 === numberOfHeroes) {
@@ -75,6 +82,9 @@ function Level({
     setClicked((prev) => [...prev, id]);
     const shuffledData = shuffleArray([...data]);
     setData(shuffledData);
+    if (!mute) {
+      selectSound.play();
+    }
   };
 
   function shuffleArray(array) {
@@ -87,6 +97,9 @@ function Level({
 
   const transitionLevel = () => {
     setTransition(true);
+    if (!mute) {
+      winSound.play();
+    }
     setClicked([]);
     window.scrollTo({
       top: (document.body.scrollHeight - window.innerHeight) / 2,

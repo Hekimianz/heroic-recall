@@ -6,6 +6,8 @@ function GameOver({
   setLevel,
   level,
   highScore,
+  mute,
+  selectSound,
 }) {
   return (
     <section className="main--conts">
@@ -19,6 +21,9 @@ function GameOver({
             setGameOver(false);
             setGameStarted(true);
             setLevel(1);
+            if (!mute) {
+              selectSound.play();
+            }
           }}
         >
           Play again
@@ -28,6 +33,9 @@ function GameOver({
           onClick={() => {
             setGameOver(false);
             setShowMenu(true);
+            if (!mute) {
+              selectSound.play();
+            }
           }}
         >
           Menu

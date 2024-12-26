@@ -9,6 +9,8 @@ function Menu({
   setShowMenu,
   setGameStarted,
   setLevel,
+  mute,
+  selectSound,
 }) {
   const [showReset, setShowReset] = useState(false);
   return (
@@ -21,6 +23,9 @@ function Menu({
             setGameStarted(true);
             setShowMenu(false);
             setLevel(1);
+            if (!mute) {
+              selectSound.play();
+            }
           }}
         >
           Play
@@ -29,6 +34,9 @@ function Menu({
           onClick={() => {
             setShowInstructions(true);
             setShowMenu(false);
+            if (!mute) {
+              selectSound.play();
+            }
           }}
         >
           How to Play
@@ -36,13 +44,21 @@ function Menu({
         <li
           onClick={() => {
             setShowReset(true);
+            if (!mute) {
+              selectSound.play();
+            }
           }}
         >
           Reset Score
         </li>
       </ul>
       {showReset ? (
-        <Reset setHighScore={setHighScore} setShowReset={setShowReset} />
+        <Reset
+          setHighScore={setHighScore}
+          setShowReset={setShowReset}
+          selectSound={selectSound}
+          mute={mute}
+        />
       ) : null}
       <span id="highScore">High Score: {highScore}</span>
     </section>

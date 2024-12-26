@@ -1,5 +1,5 @@
 import "../css/howToPlay.css";
-function HowToPlay({ setShowInstructions, setShowMenu }) {
+function HowToPlay({ setShowInstructions, setShowMenu, selectSound, mute }) {
   return (
     <section className="main--conts">
       <h1 id="instruction--h1">How to Play</h1>
@@ -49,6 +49,9 @@ function HowToPlay({ setShowInstructions, setShowMenu }) {
           onClick={() => {
             setShowMenu(true);
             setShowInstructions(false);
+            if (!mute) {
+              selectSound.play();
+            }
           }}
         >
           Back to the menu

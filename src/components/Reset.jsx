@@ -1,6 +1,9 @@
-function Reset({ setHighScore, setShowReset }) {
+function Reset({ setHighScore, setShowReset, selectSound, mute }) {
   function cancel() {
     setShowReset(false);
+    if (!mute) {
+      selectSound.play();
+    }
   }
 
   function reset() {
@@ -9,6 +12,9 @@ function Reset({ setHighScore, setShowReset }) {
       localStorage.setItem("highScore", 0);
     }
     setShowReset(false);
+    if (!mute) {
+      selectSound.play();
+    }
   }
 
   return (
