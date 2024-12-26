@@ -35,14 +35,13 @@ function Level({
 
   // fetch data
   useEffect(() => {
-    console.log(numberOfHeroes);
     const fetchHeroes = async () => {
       try {
         const fetchPromises = [];
         const heroIds = getHeroIds(numberOfHeroes);
 
         for (let i = 0; i < numberOfHeroes; i++) {
-          const url = `https://thingproxy.freeboard.io/fetch/https://superheroapi.com/api/${token}/${heroIds[i]}`;
+          const url = `https://superheroapi.com/api/${token}/${heroIds[i]}`;
           fetchPromises.push(fetch(url).then((response) => response.json()));
         }
 
