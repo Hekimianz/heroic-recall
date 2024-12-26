@@ -18,6 +18,7 @@ function Level({
   const [loading, setLoading] = useState(true);
   const [clicked, setClicked] = useState([]);
   const token = import.meta.env.VITE_API_TOKEN;
+  console.log(import.meta.env.VITE_API_TOKEN);
   let numberOfHeroes = 6;
   for (let i = 1; i < level; i++) {
     numberOfHeroes++;
