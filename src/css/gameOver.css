@@ -1,0 +1,32 @@
+#game--over-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#game--over-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.game--over-btn {
+  border: 1px solid var(--charcoal);
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--charcoal);
+  transition: 0.2s all;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: var(--white);
+}
+
+.game--over-btn:hover {
+  transform: scale(1.1);
+  color: var(--gold);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+}
+
+#game--over-btns-cont {
+  display: flex;
+  gap: 10px;
+}

@@ -3,12 +3,12 @@ import Reset from "./Reset";
 import "../css/menu.css";
 import logo from "../assets/logo.png";
 function Menu({
-  level,
-  setLevel,
   highScore,
   setHighScore,
   setShowInstructions,
   setShowMenu,
+  setGameStarted,
+  setLevel,
 }) {
   const [showReset, setShowReset] = useState(false);
   return (
@@ -16,7 +16,15 @@ function Menu({
       <img src={logo} id="logo" />
       <h1 id="title">Heroic Recall</h1>
       <ul id="menu--cont">
-        <li>Play</li>
+        <li
+          onClick={() => {
+            setGameStarted(true);
+            setShowMenu(false);
+            setLevel(1);
+          }}
+        >
+          Play
+        </li>
         <li
           onClick={() => {
             setShowInstructions(true);

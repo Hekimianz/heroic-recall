@@ -1,0 +1,150 @@
+#level--cont {
+  margin: 20px 0;
+}
+#currentLevel {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+#allCards--cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card--cont {
+  background-color: var(--gold);
+  border-radius: 4px;
+  box-shadow: rgba(255, 217, 0, 0.5) 0px 2px 8px 0px;
+  color: var(--charcoal);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.card--cont:hover {
+  box-shadow: rgba(255, 217, 0, 1) 0px 4px 16px 0px;
+  transform: scale(1.05);
+}
+
+.card--name {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card--image {
+  width: 80px;
+  height: 107px;
+  border-radius: 2px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  margin-top: 20px;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid rgb(199, 18, 18);
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: var(--gold);
+}
+
+.imgLoader {
+  width: 48px;
+  height: 48px;
+  background: var(--blue);
+  display: inline-block;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: animloader 1s ease-in infinite;
+}
+
+#transitionLevel--cont {
+  background-color: var(--charcoal);
+  color: var(--white);
+  position: absolute;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px;
+  border: 1px solid var(--gold);
+}
+
+#transitionLevel--cont p {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+#nextLevel-btn {
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--blue);
+  transition: 0.2s all;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: var(--white);
+}
+
+#nextLevel-btn:hover {
+  transform: scale(1.1);
+  color: var(--gold);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
