@@ -43,3 +43,9 @@
   color: var(--gold);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
 }
+
+@media screen and (min-width: 768px) {
+  #instructions--main {
+    width: 500px;
+  }
+}

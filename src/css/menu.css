@@ -1,6 +1,7 @@
 #menu--cont {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 
 #logo {
@@ -10,7 +11,6 @@
 #title {
   font-size: 2.8rem;
   font-weight: 700;
-  margin: 5px;
   user-select: none;
 }
 
@@ -87,4 +87,16 @@
 
 #reset--cont span:first-of-type:hover {
   color: #ff7681;
+}
+
+@media screen and (min-width: 768px) {
+  #menu--cont {
+    height: 400px;
+  }
+
+  #highScore {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
 }
